@@ -31,10 +31,10 @@
     "enemy":[
 	],
     "checkpoint":[
-		{"x":746, "y":580, "width":50, "height": 10, "type":8, "map_index":0},
-		{"x":916, "y":510, "width":50, "height": 10, "type":9, "map_index":0},
-		{"x":1088, "y":480, "width":50, "height": 10, "type":10, "map_index":0},
-		{"x":1346, "y":510, "width":50, "height": 10, "type":11, "map_index":0}
+		{"x":746, "y":580, "width":50, "height": 10, "type":6, "map_index":0},
+		{"x":916, "y":510, "width":50, "height": 10, "type":6, "map_index":0},
+		{"x":1088, "y":480, "width":50, "height": 10, "type":6, "map_index":0},
+		{"x":1346, "y":510, "width":50, "height": 10, "type":6, "map_index":0}
 	],
     "flagpole":[
 	]

@@ -60,6 +60,7 @@ LEVEL_NUM = 'level num'
 PLAYER_NAME = 'player name'
 PLAYER_MARIO = 'mario'
 PLAYER_LUIGI = 'luigi'
+BLOCK_NUMBER = 1
 
 #MAP COMPONENTS
 MAP_IMAGE = 'image_name'
@@ -100,6 +101,10 @@ CHECKPOINT_TYPE_PIPE = 4        # trigger player to go right in a pipe
 CHECKPOINT_TYPE_PIPE_UP = 5     # trigger player to another map and go up out of a pipe
 CHECKPOINT_TYPE_MAP = 6         # trigger player to go to another map
 CHECKPOINT_TYPE_BOSS = 7        # defeat the boss
+CHECKPOINT_TYPE_PIPE_WARP_1 = 8        # trigger player to end the level warp to 1
+CHECKPOINT_TYPE_PIPE_WARP_2 = 9        # trigger player to end the level warp to 2
+CHECKPOINT_TYPE_PIPE_WARP_3 = 10        # trigger player to end the level warp to 3
+CHECKPOINT_TYPE_PIPE_WARP_4 = 11        # trigger player to end the level warp to 4
 MAP_FLAGPOLE = 'flagpole'
 FLAGPOLE_TYPE_FLAG = 0
 FLAGPOLE_TYPE_POLE = 1
@@ -146,6 +151,7 @@ END_OF_LEVEL_FALL = 'end of level fall'
 IN_CASTLE = 'in castle'
 DOWN_TO_PIPE = 'down to pipe'
 UP_OUT_PIPE = 'up out of pipe'
+IN_WARP = 'in a warp state, for choosing the pipe'
 
 #PLAYER FORCES
 PLAYER_SPEED = 'speed'

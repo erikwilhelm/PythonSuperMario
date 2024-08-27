@@ -210,6 +210,10 @@ class Level(tools.State):
             if self.current_time - self.castle_timer > 2000:
                 self.update_game_info()
                 self.done = True
+        elif self.player.state == c.IN_WARP:
+            self.player.update(keys, self.game_info, None)
+            self.update_game_info()
+            self.done = True
         elif self.in_frozen_state():
             self.player.update(keys, self.game_info, None)
             self.check_checkpoints()
@@ -256,6 +260,20 @@ class Level(tools.State):
                 self.player.x_vel = 0
                 self.castle_timer = self.current_time
                 self.flagpole_group.add(stuff.CastleFlag(8745, 322))
+            elif checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_1 or checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_2 or checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_3 or checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_4:
+                if checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_1:
+                    self.game_info[c.BLOCK_NUMBER]=1
+                elif checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_2:
+                    self.game_info[c.BLOCK_NUMBER]=2
+                elif checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_3:
+                    self.game_info[c.BLOCK_NUMBER]=3
+                elif checkpoint.type == c.CHECKPOINT_TYPE_PIPE_WARP_4:
+                    self.game_info[c.BLOCK_NUMBER]=4
+                self.player.state = c.IN_WARP
+                self.player.x_vel = 0
+                
+                #:self.castle_timer = self.current_time
+                #self.flagpole_group.add(stuff.CastleFlag(8745, 322))
             elif (checkpoint.type == c.CHECKPOINT_TYPE_MUSHROOM and
                     self.player.y_vel < 0):
                 mushroom_box = box.Box(checkpoint.rect.x, checkpoint.rect.bottom - 40,

@@ -134,7 +134,8 @@ class Pipe(Stuff):
         if type == c.PIPE_TYPE_HORIZONTAL:
             rect = [(32, 128, 37, 30)]
         else:
-            rect = [(0, 160, 32, 30)]
+            # rect = [(0, 160, 32, 30)] #red pipe
+            rect = [(0, 190, 32, 30)]
         Stuff.__init__(self, x, y, setup.GFX['tile_set'],
                 rect, c.BRICK_SIZE_MULTIPLIER)
         self.name = name
@@ -160,6 +161,7 @@ class Pipe(Stuff):
             y = top_height + i * bottom_height
             self.image.blit(img, (0,y), (0, top_height, width, bottom_height))
         self.image.set_colorkey(c.BLACK)
+
 
     def check_ignore_collision(self, level):
         if self.type == c.PIPE_TYPE_HORIZONTAL:
